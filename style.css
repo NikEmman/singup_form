@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+
+}
+
+.image-block {
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+    background-image: url("images/viking_ship.jpg");
+    flex: 1;
+    position: relative;
+    justify-content: space-between;
+}
+
+.image-block>p {
+    text-align: center;
+
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    height: 15%
+}
+
+body>p {
+    position: absolute;
+
+}
+
+section {
+    flex: 2;
+}
