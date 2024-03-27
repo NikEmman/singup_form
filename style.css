@@ -2,6 +2,7 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 main {
@@ -18,7 +19,6 @@ main {
     flex: 1;
     position: relative;
     justify-content: space-between;
-    /* background-image: url(images/leaves.jpg); */
 }
 
 .image-block>img {
@@ -32,9 +32,8 @@ main {
     left: 28%;
     right: 20%;
     bottom: 5px;
+    font-size: smaller;
 }
-
-.bottom-line>P {}
 
 a {
     color: inherit;
@@ -67,12 +66,74 @@ a {
     font-family: Norse-Bold;
     font-size: 10vh;
     align-items: center;
-
 }
 
 section {
-    border: 3px solid green;
     flex: 2;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-left: 4%;
+    gap: 40px;
+    justify-content: center;
+    padding-right: 17%;
+}
 
+button {
+    background-color: #596D48;
+    color: white;
+}
+
+h2 span {
+    font-style: italic;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+    padding-bottom: 40px;
+}
+
+input {
+    border-radius: 5px;
+    border: 3px #E5E7EB solid;
+    padding: 8px;
+}
+
+input:focus {
+    box-shadow: 10px 10px 5px darkgrey;
+}
+
+label {
+    font-size: smaller;
+}
+
+
+
+form div {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    gap: 5px;
+
+}
+
+legend {
+    width: 100%;
+    font-size: x-large;
+    font-weight: 600;
+}
+
+button {
+    font-size: medium;
+    padding: 5px;
+    width: 30%;
+    border-radius: 5px;
+}
+
+section>p>a {
+    color: #596D48;
+    text-decoration: none;
 }
