@@ -74,7 +74,7 @@ section {
     display: flex;
     flex-direction: column;
     padding-left: 4%;
-    gap: 40px;
+    gap: 25px;
     justify-content: center;
     padding-right: 17%;
 }
@@ -93,7 +93,6 @@ form {
     flex-wrap: wrap;
     gap: 10px;
     justify-content: space-between;
-    padding-bottom: 40px;
 }
 
 input {
@@ -105,6 +104,11 @@ input {
 input:focus {
     box-shadow: 10px 10px 5px darkgrey;
 }
+
+input:invalid {
+    border: 2px solid red;
+}
+
 
 label {
     font-size: smaller;
@@ -128,9 +132,25 @@ legend {
 
 button {
     font-size: medium;
-    padding: 5px;
+    padding: 10px;
     width: 30%;
-    border-radius: 5px;
+    border-radius: 10px;
+}
+
+button:hover {
+    background-color: #77925f;
+}
+
+hr {
+    margin-left: -9%;
+    margin-right: -37%;
+    box-shadow: 1px darkgray;
+    color: white;
+}
+
+section>p {
+    font-size: small;
+    font-weight: 600;
 }
 
 section>p>a {

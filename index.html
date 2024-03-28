@@ -34,29 +34,31 @@
                 <legend>Let's do this !</legend>
                 <div class="fname">
                     <label for="fname">FIRST NAME</label>
-                    <input type="text" name="first_name" id="fname">
+                    <input type="text" name="first_name" id="fname" placeholder="John">
                 </div>
                 <div class="lname">
                     <label for="lname">LAST NAME</label>
-                    <input type="text" name="first_name" id="lname">
+                    <input type="text" name="first_name" id="lname" placeholder="Wick">
                 </div>
                 <div class="email">
                     <label for="email">EMAIL</label>
-                    <input type="email" name="email" id="email">
+                    <input type="email" name="email" id="email" placeholder="email@example.com">
                 </div>
                 <div class="phone">
                     <label for="phone">PHONE NUMBER</label>
-                    <input type="number" name="phone_number" id="phone">
+                    <input type="text" name="phone_number" id="phone" pattern="[69][0-9]{9}" placeholder="69xxxxxxx">
                 </div>
                 <div class="pwd">
                     <label for="pwd">PASSWORD</label>
-                    <input type="password" name="password" id="pwd">
+                    <input type="password" name="password" id="pwd"
+                        aria-label="Minimum of 7 characters. Should have at least one special character and one number and one UpperCase Letter.">
                 </div>
                 <div class="con_pwd">
                     <label for="con_pwd">CONFIRM PASSWORD</label>
                     <input type="password" name="password_confirm" id="con_pwd">
                 </div>
             </form>
+            <hr>
             <button type="submit">Create Account</button>
             <p>Already have an account? <a href="http://bogus.com">Log in</a></p>
         </section>
