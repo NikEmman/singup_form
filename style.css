@@ -105,10 +105,9 @@ input:focus {
     box-shadow: 10px 10px 5px darkgrey;
 }
 
-input:invalid {
+.invalid {
     border: 2px solid red;
 }
-
 
 label {
     font-size: smaller;
@@ -130,6 +129,20 @@ legend {
     font-weight: 600;
 }
 
+.error {
+    color: #af4242;
+    background-color: #ecb8c2;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: small;
+    /*visibility: hidden;*/
+    display: none;
+}
+
+.display-error {
+    display: block;
+}
+
 button {
     font-size: medium;
     padding: 10px;
@@ -139,6 +152,15 @@ button {
 
 button:hover {
     background-color: #77925f;
+}
+
+.success {
+    margin-bottom: 30px;
+    color: green;
+    background-color: #d2ffd2;
+    padding: 10px;
+    display: none;
+    text-align: center;
 }
 
 hr {

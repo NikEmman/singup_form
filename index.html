@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign-up Form</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+
 </head>
 
 <body>
@@ -30,36 +32,43 @@
                 realize
                 your deepest dreams. Sign up <span>now</span> to get started.</h2>
             <h2>You <span>know</span> you want to.</h2>
-            <form action="" method="post">
+            <form action="" method="post" name="sign-up-form" id="sign-up-form">
                 <legend>Let's do this !</legend>
+
                 <div class="fname">
                     <label for="fname">FIRST NAME</label>
                     <input type="text" name="first_name" id="fname" placeholder="John">
+                    <span class="error name-error"></span>
                 </div>
                 <div class="lname">
                     <label for="lname">LAST NAME</label>
                     <input type="text" name="first_name" id="lname" placeholder="Wick">
+                    <span class="error lname-error"></span>
                 </div>
                 <div class="email">
                     <label for="email">EMAIL</label>
-                    <input type="email" name="email" id="email" placeholder="email@example.com">
+                    <input type="text" name="email" id="email" placeholder="email@example.com">
+                    <span class="error email-error"></span>
                 </div>
                 <div class="phone">
                     <label for="phone">PHONE NUMBER</label>
-                    <input type="text" name="phone_number" id="phone" pattern="[69][0-9]{9}" placeholder="69xxxxxxx">
+                    <input type="text" name="phone_number" id="phone" placeholder="69xxxxxxx">
+                    <span class="error phone-error"></span>
                 </div>
                 <div class="pwd">
                     <label for="pwd">PASSWORD</label>
-                    <input type="password" name="password" id="pwd"
-                        aria-label="Minimum of 7 characters. Should have at least one special character and one number and one UpperCase Letter.">
+                    <input type="password" name="password" id="pwd" title="*Passwords do not match">
+                    <span class="error password-error"></span>
                 </div>
-                <div class="con_pwd">
-                    <label for="con_pwd">CONFIRM PASSWORD</label>
-                    <input type="password" name="password_confirm" id="con_pwd">
+                <div class="password2">
+                    <label for="password2">CONFIRM PASSWORD</label>
+                    <input type="password" name="password2" id="password2">
+                    <span class="error password2-error"></span>
                 </div>
             </form>
             <hr>
-            <button type="submit">Create Account</button>
+            <button type="submit" form="sign-up-form">Create Account</button>
+            <span class="success">Your registration is complete !</span>
             <p>Already have an account? <a href="http://bogus.com">Log in</a></p>
         </section>
     </main>
