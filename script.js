@@ -5,6 +5,7 @@ function showError(errorInput, errorElement, errorMessage) {
 }
 const phoneRegEx = new RegExp("[69][0-9]{9}");
 const emailRegEx = new RegExp("^\\S+@\\S+\\.\\S+$");
+const whiteSpaceRegex = new RegExp("/\s/")
 function clearError() {
     let errors = document.querySelectorAll(".error")
     for (let error of errors) {
@@ -19,57 +20,51 @@ function clearError() {
 
 let form = document.forms['sign-up-form']
 form.onsubmit = function (event) {
+    event.preventDefault();
 
     clearError();
 
-    if (form.fname.value === "") {
-        showError("fname", "fname-error", "* You have to enter your name");
-        return false;
+
+    if (!whiteSpaceRegex.test(form.fname.value)) {
+        showError("fname", "fname-error", "* Names can not contain empty spaces");
     }
-    if (form.lname.value === "") {
-        showError("lname", "lname-error", "* You have to enter your last name");
-        return false;
+    if (form.fname.value === "" || form.fname.value === null) {
+        showError("fname", "fname-error", "* You have to enter your name");
     }
 
-    if (form.email.value === "") {
+    if (!whiteSpaceRegex.test(form.lname.value)) {
+        showError("lname", "lname-error", "* Last names can not contain empty spaces");
+    }
+    if (form.lname.value === "" || form.lname.value === null) {
+        showError("lname", "lname-error", "* You have to enter your last name");
+    }
+
+    if (form.email.value === "" || form.email.value === null) {
         showError("email", "email-error", "* You have to enter your email");
-        return false;
     }
     if (!emailRegEx.test(form.email.value)) {
         showError("email", "email-error", "* You have to enter a valid email (i.e. email@example.com)");
-        return false;
     }
-    if (form.phone.value === "") {
+    if (form.phone.value === "" || form.phone.value === null) {
         showError("phone", "phone-error", "* You have to enter your phone number");
-        return false;
     }
     if (!phoneRegEx.test(form.phone.value)) {
         showError("phone", "phone-error", "* You have to enter a valid phone number (i.e.69xxxxxxx)");
-        return false;
     }
-    if (form.password.value === "") {
+    if (form.password.value === "" || form.password.value === null) {
         showError("password", "password-error", "* You have to enter a password");
-        return false;
     }
-    if (form.password2.value === "") {
-        showError("password2", "password2-error", "* You have to enter a password");
-        return false;
+    if (form.password.value.length <= 5) {
+        showError("password", "password-error", "* Your password is too short");
     }
+    if (form.password.value.length >= 20) {
+        showError("password", "password-error", "* Your password is too long");
+    }
+
     if (form.password.value !== form.password2.value) {
         showError("password2", "password2-error", "* Your passwords no do match");
-        return false;
     }
 
-
-
-
-
-
-
-
-
-
-
-    // this prevents form from submitting to the server
-    event.preventDefault();
 }
+
+
