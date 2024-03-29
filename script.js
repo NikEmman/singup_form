@@ -3,9 +3,10 @@ function showError(errorInput, errorElement, errorMessage) {
     document.querySelector("#" + errorInput).classList.add("invalid");
     document.querySelector("." + errorElement).textContent = errorMessage;
 }
+
 const phoneRegEx = new RegExp("[69][0-9]{9}");
 const emailRegEx = new RegExp("^\\S+@\\S+\\.\\S+$");
-const whiteSpaceRegex = new RegExp("/\s/")
+
 function clearError() {
     let errors = document.querySelectorAll(".error")
     for (let error of errors) {
@@ -24,17 +25,10 @@ form.onsubmit = function (event) {
 
     clearError();
 
-
-    if (!whiteSpaceRegex.test(form.fname.value)) {
-        showError("fname", "fname-error", "* Names can not contain empty spaces");
-    }
     if (form.fname.value === "" || form.fname.value === null) {
         showError("fname", "fname-error", "* You have to enter your name");
     }
 
-    if (!whiteSpaceRegex.test(form.lname.value)) {
-        showError("lname", "lname-error", "* Last names can not contain empty spaces");
-    }
     if (form.lname.value === "" || form.lname.value === null) {
         showError("lname", "lname-error", "* You have to enter your last name");
     }
@@ -55,10 +49,10 @@ form.onsubmit = function (event) {
         showError("password", "password-error", "* You have to enter a password");
     }
     if (form.password.value.length <= 5) {
-        showError("password", "password-error", "* Your password is too short");
+        showError("password", "password-error", "* Your password must be at least 6 characters");
     }
     if (form.password.value.length >= 20) {
-        showError("password", "password-error", "* Your password is too long");
+        showError("password", "password-error", "* Your password must be less than 20 characters");
     }
 
     if (form.password.value !== form.password2.value) {
